@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.3 Métodos | Título completo de la tesis o seminario de grado</title>
-  <meta name="description" content="3.3 Métodos | Título completo de la tesis o seminario de grado" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <title>3.3 Métodos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</title>
+  <meta name="description" content="3.3 Métodos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.3 Métodos | Título completo de la tesis o seminario de grado" />
+  <meta property="og:title" content="3.3 Métodos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   <meta property="og:type" content="book" />
   
   
@@ -16,12 +16,12 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.3 Métodos | Título completo de la tesis o seminario de grado" />
+  <meta name="twitter:title" content="3.3 Métodos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   
   
   
 
-<meta name="author" content="Mi nombre" />
+<meta name="author" content="Anais Herrera Leighton" />
 
 
 
@@ -31,8 +31,7 @@
   
   
 <link rel="prev" href="variables.html"/>
-<link rel="next" href="análisis.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<link rel="next" href="análisis-factorial-confirmatorio-variables-dependientes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,26 +52,25 @@
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +79,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,35 +131,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen</a></li>
-<li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
-<li class="chapter" data-level="1" data-path="introducción-tesisfacsodown.html"><a href="introducción-tesisfacsodown.html"><i class="fa fa-check"></i><b>1</b> Introducción: tesisfacsodown</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="requisitos.html"><a href="requisitos.html"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="pasos.html"><a href="pasos.html"><i class="fa fa-check"></i><b>1.2</b> Pasos</a></li>
-<li class="chapter" data-level="1.3" data-path="algunos-detalles-adicionales.html"><a href="algunos-detalles-adicionales.html"><i class="fa fa-check"></i><b>1.3</b> Algunos detalles adicionales:</a></li>
-<li class="chapter" data-level="1.4" data-path="publicación-web-y-versionamiento.html"><a href="publicación-web-y-versionamiento.html"><i class="fa fa-check"></i><b>1.4</b> Publicación web y versionamiento</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="antecedentes-conceptuales-y-empíricos.html"><a href="antecedentes-conceptuales-y-empíricos.html"><i class="fa fa-check"></i><b>2</b> Antecedentes conceptuales y empíricos</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="concepto-principal-explanandum-objeto-de-estudio.html"><a href="concepto-principal-explanandum-objeto-de-estudio.html"><i class="fa fa-check"></i><b>2.1</b> (concepto principal - explanandum - objeto de estudio)</a></li>
-<li class="chapter" data-level="2.2" data-path="factores-asociados-a-objeto-de-estudio.html"><a href="factores-asociados-a-objeto-de-estudio.html"><i class="fa fa-check"></i><b>2.2</b> Factores asociados a objeto de estudio</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="factores-asociados-a-objeto-de-estudio.html"><a href="factores-asociados-a-objeto-de-estudio.html#factor-1"><i class="fa fa-check"></i><b>2.2.1</b> Factor 1</a></li>
-<li class="chapter" data-level="2.2.2" data-path="factores-asociados-a-objeto-de-estudio.html"><a href="factores-asociados-a-objeto-de-estudio.html#factor-n"><i class="fa fa-check"></i><b>2.2.2</b> Factor N</a></li>
+<li class="chapter" data-level="1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="antecedentes-conceptuales-y-empíricos.html"><a href="antecedentes-conceptuales-y-empíricos.html"><i class="fa fa-check"></i><b>2</b> Antecedentes conceptuales y empíricos</a><ul>
+<li class="chapter" data-level="2.1" data-path="actitudes-hacia-la-igualdad-de-derechos.html"><a href="actitudes-hacia-la-igualdad-de-derechos.html"><i class="fa fa-check"></i><b>2.1</b> Actitudes hacia la igualdad de derechos</a></li>
+<li class="chapter" data-level="2.2" data-path="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html"><a href="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html"><i class="fa fa-check"></i><b>2.2</b> Factores relacionados con las actitudes hacia la igualdad de derechos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html"><a href="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html#investigaciones-centradas-en-características-individuales"><i class="fa fa-check"></i><b>2.2.1</b> Investigaciones centradas en características individuales</a></li>
+<li class="chapter" data-level="2.2.2" data-path="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html"><a href="factores-relacionados-con-las-actitudes-hacia-la-igualdad-de-derechos.html#investigaciones-centradas-en-el-rol-de-las-escuelas"><i class="fa fa-check"></i><b>2.2.2</b> Investigaciones centradas en el rol de las escuelas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="metodología.html"><a href="metodología.html"><i class="fa fa-check"></i><b>3</b> Metodología</a>
-<ul>
+<li class="chapter" data-level="3" data-path="especificaciones-metodológicas.html"><a href="especificaciones-metodológicas.html"><i class="fa fa-check"></i><b>3</b> Especificaciones metodológicas</a><ul>
 <li class="chapter" data-level="3.1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>3.1</b> Datos</a></li>
-<li class="chapter" data-level="3.2" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>3.2</b> Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>3.2</b> Variables</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="variables.html"><a href="variables.html#indicadores-de-las-actitudes-hacia-la-igualdad-de-derechos"><i class="fa fa-check"></i><b>3.2.1</b> Indicadores de las actitudes hacia la igualdad de derechos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="variables.html"><a href="variables.html#indicadores-de-las-variables-independientes"><i class="fa fa-check"></i><b>3.2.2</b> Indicadores de las variables independientes</a></li>
+</ul></li>
 <li class="chapter" data-level="3.3" data-path="métodos.html"><a href="métodos.html"><i class="fa fa-check"></i><b>3.3</b> Métodos</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="análisis.html"><a href="análisis.html"><i class="fa fa-check"></i><b>4</b> Análisis</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="análisis-descriptivo.html"><a href="análisis-descriptivo.html"><i class="fa fa-check"></i><b>4.1</b> Análisis descriptivo</a></li>
-<li class="chapter" data-level="4.2" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>4.2</b> Modelos</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>5</b> Conclusiones</a></li>
+<li class="chapter" data-level="4" data-path="análisis-factorial-confirmatorio-variables-dependientes.html"><a href="análisis-factorial-confirmatorio-variables-dependientes.html"><i class="fa fa-check"></i><b>4</b> Análisis factorial confirmatorio: Variables dependientes</a></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -175,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Título completo de la tesis o seminario de grado</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</a>
           </h1>
         </div>
 
@@ -183,18 +169,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="métodos" class="section level2" number="3.3">
+<div id="métodos" class="section level2">
 <h2><span class="header-section-number">3.3</span> Métodos</h2>
+<p>Para responder a los objetivos de este proyecto de investigación se ha decidido utilizar una estrategia de investigación cuantitativa, principalmente por dos motivos. Por un lado, debido a que actualmente existen datos secundarios disponibles que abordan toda la información que requiero analizar, en la población de interés (jóvenes en edad escolar). Estos datos se encuentran disponibles en el estudio ICCS 2016, una prueba estandarizada a nivel internacional que fue construida por un equipo de investigadores expertos en la temática de educación cívica. Cabe destacar que este estudio posee como precedente dos estudios anteriores (CIVED 1999 y ICCS 2009), por lo que la construcción de este tercer estudio se ha servido de la experiencia recopilada en las investigaciones anteriores y se han realizado las mejoras que se consideraron necesarias. En consecuencia, se puede afirmar que son datos de buena calidad. Por otro lado, he considerado que la estrategia cuantitativa es la más adecuada para responder al objetivo general de este estudio debido a que a través de técnicas estadísticas como las regresiones es posible estimar efectos de interacción entre las variables. La estimación de efectos de interacción entre variables me permite evaluar con precisión si alguna/s de la/s característica/s de la escuela que se incorporan en el análisis posee/n la capacidad de moderar la relación existente entre las características adscritas del estudiante y sus actitudes hacia la igualdad de derechos.</p>
+<p>El plan de análisis de este proyecto de investigación consta de dos partes, uno enfocado en evaluar los modelos de medida de las variables latentes y otro enfocado en testear las hipótesis.</p>
+<p>En primer lugar, se estimará un análisis factorial confirmatorio multinivel con el objetivo de evaluar si la dimensionalidad propuesta para medir las actitudes hacia la igualdad de derechos presenta un ajuste adecuado (la propuesta se presenta con mayor detalle en el acápite “Variables”). Además, se estimará un análisis factorial confirmatorio multinivel para las variables independientes que son variables latentes (clima escolar y apertura a la discusión en el aula). Se utilizarán los criterios de evaluación de la bondad del ajuste del modelo propuestos por Brown (2008): (1) Chi-square mayor que 0.05; (2) Chi-square ratio menor que 3; (3) CFI mayor que 0.95; (4) TLI mayor que 0.95; y (5) RMSEA menor que 0.08.</p>
+<p>En segundo lugar, se tienen dos opciones para testear las hipótesis, pero no es posible definir en este momento cuál de las dos opciones se implementará. Aunque cabe destacar que, sin lugar a duda, el modelamiento será multinivel. Esta decisión se fundamenta en que, como las encuestas se realizan a más de un estudiante de cada escuela, no es posible suponer la existencia de independencia entre los casos<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, siendo lo más apropiado que el análisis se realice agrupando a los estudiantes por escuela.</p>
+<p>Se han formulado dos opciones debido a que se desea privilegiar ante todo realizar un análisis que sea transparente y reproducible, para lo cual se utilizará el software libre R. La primera opción es estimar modelos de ecuaciones estructurales multinivel debido a que la variable dependiente en este estudio no es una variable observada, sino que es una variable latente (es decir, fue medida a partir de varios indicadores) y esta técnica estadística está específicamente diseñada para el análisis de variables latentes. En esta línea, un estudio de simulación Monte Carlo (Rdz-Navarro &amp; Asún, 2016) establece que, al trabajar con variables latentes, emplear esta forma de estimación estadística permite reducir el error de medida, en comparación a utilizar otras técnicas que buscan dar cuenta de una puntuación observada (ya sea a partir de un índice sumatorio, puntuaciones factoriales o estimaciones derivadas de la teoría de respuesta al ítem). Por lo tanto, en el caso de que se desarrolle una actualización de la librería “lavaan” (la cual permite estimar modelos de ecuaciones estructurales multinivel en R) donde se incorpore la posibilidad de estimar SEM de dos niveles con pendientes aleatorias, se estimarán modelos de ecuaciones estructurales multinivel para testear las hipótesis. Sin embargo, el creador de “lavaan” señala que, pese a ser parte de sus planes futuros para el desarrollo de la librería, no le es posible estimar cuánto tiempo tardará en implementar esta función. Por este motivo es que he formulado otra opción para el testeo de las hipótesis, en caso de que no se implemente la función en el corto plazo. La segunda opción consiste en la estimación de puntuaciones factoriales para testear las hipótesis con modelos de regresiones multinivel a través de la librería “lme4”. Cabe destacar que esta segunda opción generaría que, probablemente, los resultados del estudio tengan más error de medida (en comparación a usar una técnica especialmente diseñada para el análisis de variables latentes).</p>
+<p>Con el objetivo de asumir un compromiso con el desarrollo de una ciencia social abierta, se subirá un pre-registro de las hipótesis a la plataforma Open Science Framework (OSF) y se creará un repositorio en la plataforma GitHub para ir subiendo los códigos de análisis estadístico con sus respectivos resultados.</p>
 
 </div>
 <!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Antes de incorporar esta variable de control en el modelo, se centrará la variable al promedio del colegio con el objetivo de despejar el efecto individual del efecto de la escuela.<a href="métodos.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="análisis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="análisis-factorial-confirmatorio-variables-dependientes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

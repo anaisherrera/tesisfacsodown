@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.1 Datos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</title>
-  <meta name="description" content="3.1 Datos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <title>4 Análisis factorial confirmatorio: Variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</title>
+  <meta name="description" content="4 Análisis factorial confirmatorio: Variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.1 Datos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <meta property="og:title" content="4 Análisis factorial confirmatorio: Variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.1 Datos | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <meta name="twitter:title" content="4 Análisis factorial confirmatorio: Variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="especificaciones-metodológicas.html"/>
-<link rel="next" href="variables.html"/>
+<link rel="prev" href="métodos.html"/>
+<link rel="next" href="bibliografía.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -169,17 +169,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="datos" class="section level2">
-<h2><span class="header-section-number">3.1</span> Datos</h2>
-<p>Esta investigación utilizará los datos del último estudio Internacional sobre Educación Cívica y Ciudadana (ICCS) de la IEA, el cual consiste en una evaluación estandarizada que permite evaluar cómo las escuelas preparan a sus estudiantes para asumir su rol de ciudadanos, proporcionando evidencia sobre la orientación moral a los Derechos Humanos y la justicia social, el conocimiento cívico y las percepciones sobre el clima escolar de estudiantes de distintas partes del mundo (Schulz, Ainley, Cox et al, 2016). La encuesta fue realizada a una muestra representativa de los estudiantes matriculados en octavo grado en 24 países, siempre que la edad promedio de ese nivel fuera 13,5 años o más (de lo contrario, se define el noveno grado como la población objetivo) (IEA, s.f.). En Chile este estudio incorporó a 5.081 estudiantes de 8°básico de 178 escuelas, entre los cuales el 49,3% se identificó con el género femenino y el 50,7% con el género masculino. La muestra incluye establecimientos de todas las regiones, dependencias administrativas y zonas geográficas del país (Agencia de Calidad de la Educación, s.f.). Cabe destacar que se muestreo sólo una clase por escuela, por lo que los datos corresponden a estudiantes que no sólo pertenecen a la misma escuela, sino que comparten en el aula de clases (Schulz, Carstens, Losito, &amp; Fraillon, 2018).</p>
+<div id="análisis-factorial-confirmatorio-variables-dependientes" class="section level1">
+<h1><span class="header-section-number">4</span> Análisis factorial confirmatorio: Variables dependientes</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">data_tt =<span class="st"> </span>data1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(IS3G24A,IS3G24B,IS3G24E,IS3G25A,IS3G25B,IS3G25C,IS3G25E,LS3G08A,LS3G08B,LS3G08C,LS3G08D,LS3G08E,idschool) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</a>
+<a class="sourceLine" id="cb1-2" title="2">model_tt &lt;-<span class="st"> &#39;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="st">f.genero =~ IS3G24A + IS3G24B + IS3G24E </span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="st">f.etnico =~ IS3G25A + IS3G25B + IS3G25C + IS3G25E</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="st">f.homosexual =~ LS3G08A + LS3G08B + LS3G08C + LS3G08D + LS3G08E</span></a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="st">f.genero ~~ f.etnico </span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="st">f.genero ~~ f.homosexual</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="st">f.etnico ~~ f.homosexual&#39;</span></a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13">fit_tt&lt;-<span class="st"> </span><span class="kw">cfa</span>(model_tt, <span class="dt">data=</span>data_tt, <span class="dt">ordered=</span><span class="kw">c</span>(<span class="st">&quot;IS3G24A&quot;</span>,<span class="st">&quot;IS3G24B&quot;</span>,<span class="st">&quot;IS3G24E&quot;</span>,<span class="st">&quot;IS3G25A&quot;</span>,<span class="st">&quot;IS3G25B&quot;</span>,<span class="st">&quot;IS3G25C&quot;</span>,<span class="st">&quot;IS3G25E&quot;</span>,<span class="st">&quot;LS3G08A&quot;</span>,<span class="st">&quot;LS3G08B&quot;</span>,<span class="st">&quot;LS3G08C&quot;</span>,<span class="st">&quot;LS3G08D&quot;</span>,<span class="st">&quot;LS3G08E&quot;</span>), <span class="dt">cluster =</span> <span class="st">&#39;idschool&#39;</span>)</a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="kw">summary</span>(fit_tt, <span class="dt">fit.measures=</span>T, <span class="dt">standardized=</span>T)</a></code></pre></div>
+<p><strong>Indicadores de ajuste del modelo</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Standard</th>
+<th>Robust</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chi-square (P-value)</td>
+<td>878,808 (0,000)</td>
+<td>1659,773 (0,000)</td>
+</tr>
+<tr class="even">
+<td>Chi-square Ratio (df)</td>
+<td>17,231 (51)</td>
+<td>32,544 (51)</td>
+</tr>
+<tr class="odd">
+<td>CFI</td>
+<td>0,998</td>
+<td>0,991</td>
+</tr>
+<tr class="even">
+<td>TLI</td>
+<td>0,998</td>
+<td>0,988</td>
+</tr>
+<tr class="odd">
+<td>RMSEA (P-value)</td>
+<td>0,057 (0,000)</td>
+<td>0,079 (0,000)</td>
+</tr>
+</tbody>
+</table>
+<p>Siguiendo los criterios de bondad de ajuste propuestos por Brown (2008), es posible afirmar que según los indicadores relativos al Chi-square el modelo de medida no presentaría un ajuste adecuado. Sin embargo, esta prueba suele verse afectada cuando se trabaja con tamaños muestrales grandes, por lo que se deben analizar también los otros tres indicadores de ajuste del modo. Los otros tres indicadores se encuentran dentro de los criterios establecidos por Brown, generando evidencias de un nivel de ajuste adecuado. Por consiguiente, se ha decidido utilizar este modelo de medida para las variables dependientes debido a que presenta un ajuste parcialmente adecuado.</p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="especificaciones-metodológicas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="métodos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografía.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -210,7 +262,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-metod.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-analisis.Rmd",
 "text": "Edit"
 },
 "history": {

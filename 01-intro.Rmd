@@ -1,155 +1,43 @@
-# Introducción: tesisfacsodown
+# Introducción
 
-Tesisfacsodown es básicamente una propuesta o plantilla para poder escribir un trabajo final formateado en alta calidad, con opción tanto para pdf como para html. Para ello, basta con escribir el trabajo en un lenguaje de estructura simple: **markdown** (detalles mś adelante), el que luego es transformado a un documento formateado en pdf tal como se puede ver [aquí](docs/tesis.pdf), y si se desea también en html de manera simultanea. Es decir, se trata de concentrarse en escribir y el trabajo de formateo se lo dejamos a un tercero, que en este caso es la librería `bookdown` de R [@xie_Bookdown_2017]  .
-
-```{r flujo, echo=FALSE, fig.cap="Flujo tesisfacsodown", fig.align = 'center', out.width = "100%"}
-knitr::include_graphics(path = "images/flujobookdown.png")
-```
-Junto con realizar el trabajo de formato, quienes realizan análisis de datos con R tienen la posibilidad de incluir también los resultados (tablas, gráficos) de manera dinámica. Esto quiere decir que los análisis se realizan en el mismo documento, que se actualiza automáticamente en caso de modificaciones evitando así la ineficiencia de estar cortando y pegando cada vez que se realiza un cambio.
-
-Tesisfacsodown está basada en otros proyectos similares como [`tesisdown`](https://github.com/ismayc/thesisdown) y también [`oxforddown`](https://github.com/ulyngs/oxforddown).
-
-**¿Cómo funciona?**
-
-_En breve_: haciendo una copia de la carpeta _tesisfacsodown_, completando / reemplazando los contenidos en los archivos separados según secciones del documento (introducción, antecedentes, etc), y luego se utiliza el programa o librería `bookdown`, que funciona en el entorno R y que produce los documentos formateados en pdf y/o html. No es necesario saber R para poder utilizar tesisfacsodown, pero si estar dispuesto a aprender un par de cosas.
-
-## Requisitos
-
-- Software: R/RStudio (ambos gratuitos).
-
-- librerías de R: `bookdown`, se instala desde RStudio en el menú Tools > Install packages > bookdown. Si se maneja R es más directo ejecutar desde la consola `install.packages("bookdown")`
-
-- Escritura: conocimiento de _Markdown_, que es básicamente escribir simplemente texto con muy pocas marcas de edición (como encabezados, cursivas, negritas). Estas marcas de edición luego son interpretadas para poder generar documentos formateados en pdf, html (web) y también word. No requiere gran conocimiento previo, una introducción breve se puede encontrar [aquí](https://juancarloscastillo.github.io/in-socabi/lenguaje-reproducible.html).
-
-- No se requiere conocimiento de análisis de datos con R. Si bien este formato facilita la inclusión de resultados de análisis cuantitativos, puede ser perfectamente usado para trabajos con otras metodologías.
-
-- Si además de pdf se quiere publicar en formato web  (es opcional) se necesitan conocimientos básicos de Git y Github. Una breve introducción se puede ver [aquí](https://cienciasocialabierta.netlify.app/class/08-class/), y con mucho mayor detalle en [https://happygitwithr.com/](https://happygitwithr.com/).
-
-## Pasos
-
-El primer paso consiste  es obtener la carpeta de ejemplo **tesisfacsodown**, luego reemplazar algunos contenidos y obtener el documento formateado mediante un simple click en RStudio. Existen dos formas:
-
-- simplemente bajar la carpeta desde [aquí]()
-- para quienes tengan una cuenta en Github, lo más facil es hacer un fork del repositorio [https://github.com/juancarloscastillo/tesisfacsodown](https://github.com/juancarloscastillo/tesisfacsodown), luego clonarlo localmente y comenzar a trabajar desde ahí. Esta opción es la más convieniente si se quiere luego publicar la tesis online (detalles abajo en sección de publicación web).
-
-Una vez que se tiene la carpeta localmente, hacer doble click en el archivo `tesis.Rproj`, con lo que se abrirá RStudio (tiene que estar instalado previamente, tutorial [aquí](https://multivariada.netlify.app/class/#installR)). En RStudio hacer click sobre el botón "build book":
-
-```{r build, echo=FALSE, fig.cap="Generando los documentos en pdf y html", fig.align = 'center', out.width = '60%'}
-knitr::include_graphics(path = "images/build_book.png")
-```
-
-Con esto aparecerá en el visor de RStudio (pestaña Viewer) el documento en formato (html) y también se generará el documento tesis.pdf en la carpeta docs, y al que se puede acceder desde el ícono pdf en la barra superior del documento en html. Lo que aparece en los documentos html y pdf es este mismo documento pdf/html que están viendo ahora, pero que ahora se encuentra guardado localmente en sus computadores y que pueden modificar con los contenidos de sus trabajos.
-
-*Detalles*
-
-La carpeta tiene una serie de archivos y subcarpetas. Lo que hace el botón "build book" es activar la función `bookdown` de R que permite convertir el contenido escrito en Markdown hacia html y pdf. Para ello, los contenidos de la carpeta se organizan de la siguiente manera:
-
-- **Archivo index.Rmd**: este archivo contiene
-  - una serie de campos para poder personalizar e identificar la tesis, como título, autor, etc.
-  - de manera opcional se puede incluir un archivo con referencias bibliográficas .bib en caso de utilizar formato `bibtex` (que puede ser generado con gestores de referencias como Zotero o Mendeley, mayores detalles revisar [aquí](https://cienciasocialabierta.netlify.app/class/05-class/).
-  - también aparecen algunas opciones que tienen que ver con la generación del documento pdf y del sitio que no hay que modificar.
-  - finalmente, en este archivo también se puede incluir el Resumen / abstract del trabajo.
-
-- **Secciones del trabajo**: es una propuesta de archivos markdown con extensión .Rmd que comienzan con un número, y es donde se separan las distintas secciones o capítulos. Podría también ser un solo gran archivo con todos los contenidos, pero esta división permite un mayor orden en el trabajo y también separa en distintas páginas web en el caso de publicación en este formato. El orden en que aparecen las secciones en el documento final se indica con un número al inicio del archivo (ej: 01-intro.Rmd). Los archivos de las secciones que aparecen en esta carpeta son solo de ejemplo y pueden ser eliminados / reemplazados de acuerdo a la estructura preferida.
-
-Adicionalmente se encuentran:
-
-- *Archivos Readme* (.md y .html): contienen la información que aparece aquí, pueden ser eliminados posteriormente.
-
-- *Archivos .yml*: son _output y _bookdown, y contienen información para generar los documentos pdf y html, no modificar
-
-- *tesis.Rproj*: este es archivo que permite acceder a RStudio desde esta carpeta y activar las funciones necesarias para generar el documento formateado. Por lo tanto, luego de bajar la carpeta hacer doble click en este archivo.
-
-- *tesis.bib*: es el archivo que contiene las referencias bibliográficas en formato bibtex, en caso de utilizar esta forma de referenciar. El archivo debe mantenerse con este nombre, de lo contrario no funcionará en el pdf.
-
-- *Carpetas*:
-  - images: para guardar imágenes que luego se puedan llamar desde los documentos. Para poder insertarlas desde los documentos Rmd se requiere dar la ruta a la imagen, por ejemplo: images/mi_imagen.jpg. Que las imágenes se encuentren en esta carpeta es opcional, solo ayuda al orden de los documentos.
-  - templates: aquí se encuentran archivos que permiten dar formato a los documentos pdf y html (no modificar ni eliminar)
-  - docs: carpeta producida automáticamente que contiene los documentos generados y formateados en pdf y/o html.
-
-## Algunos detalles adicionales:
-
-- para más opciones de bookdown y detalles en general consultar [https://rubenfcasal.github.io/bookdown_intro/](https://rubenfcasal.github.io/bookdown_intro/) (en español).
-
-- el formato del pdf es para ser impreso por los dos lados, por eso incluye algunas páginas en blanco (por ejemplo, la paǵina de atrás de la portada), y también los números de página se van alternando entre izquierda y derecha
-
-- Es posible generar una referenciación automática de tablas, imágenes y gráficos; además, se generan los índices respectivos en el formato pdf. Si estos provienen simplemente de archivos externos, se pueden almacenar en la carpeta "imágenes" e insertar así:
-
-````
-```{r nombre, echo=FALSE, fig.cap="Imagen de ejemplo", fig.align = 'center', out.width = '50%'}`r ''`
-knitr::include_graphics(path = "images/build_book.png")
-```
-````
-
-Lo que hay aquí es un trozo o "chunk" de código R, que en (R)Markdown se inserta simplemente entre tres acentos invertidos ("```"). Luego hay dos partes: las especificaciones de formato que van entre llaves {}, y la instrucción de lo que hay que hacer, en este caso llamar una imagen. Vamos por parte:
-
-- especificaciones de formato:
-  - `r` solamente informa que viene código R
-  - `nombre`: es el nombre que identifica al chunk, puede ser cualquiera
-  - `echo=FALSE`: esto se utiliza para que solo se muestre el resultado sin el código. Si fuera `TRUE`, entonces aparecería la función que llama la imagen además que la mi_imagen
-  - `fig.cap`: el título de la imagen
-  - `fig.align`: alineación de la figura
-  - `out.width`: ancho en relación a la página. Hay diferentes formas de especificar las dimensiones, la ventaja de esta es que funciona bien tanto para pdf como para html, por lo que se recomienda
-
-- instrucción o función: aquí se da la ruta a la imagen dentro del paréntesis con `path=`, y lo que antecede es la función para incluir gráficos de la librería knitr de R. Pero en simple: solo reemplazar el nombre de la imagen
-
-Al incluir este trozo de código el resultado será el siguiente:
+La igualdad de derechos es uno de los principios fundamentales de todo sistema democrático, pudiéndose establecer a la vez como un punto de partida y un objetivo de estos (Vila, 2008). Sin embargo, las democracias latinoamericanas y caribeñas aún presentan grandes desafíos en términos de la inclusión de grupos sociales subalternos, lo que se expresa en la mantención de desigualdades sociales, políticas y económicas (Burchardt, 2008; Bárcena, Prado, Abramo & Pérez, 2016) y en el aumento de los delitos de odio por motivos de sexo, religión, orientación sexual y otras condiciones sociales (Organización de los Estados Americanos, 2013). El problema es de tal magnitud que la Comisión Económica para América Latina y el Caribe (CEPAL) ha definido a Latinoamérica como la región más desigual del mundo (Abramo, 2017; CEPAL, 2017), y no sólo por las desigualdades socioeconómicas, sino también porque no se ha logrado que toda la población goce efectivamente de los derechos consagrados en la Declaración Universal de Derechos Humanos (Bárcena et al, 2016). 
 
 
-```{r nombre2, echo=FALSE, fig.cap="Imagen de ejemplo", fig.align = 'center', out.width = '50%'}
-knitr::include_graphics(path = "images/facso.png")
-```
-
-Donde la referenciación (caption) tiene el número 1.2, que quiere decir que es la segunda imagen del capítulo 1. En el pdf ahora esta figura aparece en el índice de figuras.
-
-- en el caso de gráficos generados por R, también se insertan dentro de un chunk, por ejemplo
-
-````
-```{r echo=FALSE, fig.cap="Gráfico de ejemplo", fig.align = 'center', out.width = '50%'}`r ''`
-boxplot(Sepal.Length~Species,data=iris,
-        xlab="Species", ylab="Sepal Length", main="Iris Boxplot")
-```
-````
-Y el resultado es este:
+Los altos niveles de desigualdad presentes en países como Chile nos enfrentan a un panorama doblemente preocupante. Por un lado, las desigualdades perpetúan diferencias en el respeto y la dignidad con que se trata a las distintas personas (Conde, 2014). Estas diferencias en el trato conllevan el surgimiento de prácticas discriminatorias hacia grupos sociales desfavorecidos (Araujo, 2013), como las personas de niveles socioeconómicos bajos, las mujeres, los migrantes, los pertenecientes a grupos étnicos y los homosexuales. En otras palabras, “(…) los actos de discriminación tienen raíces socioculturales influidas por intereses de grupos que sustentan el poder económico, político y social, cuya concentración de poder se asienta en la desigualdad social y la profundiza.” (Conde, 2014, p.4). Por otro lado, los altos niveles de desigualdad constituyen una amenaza para el desarrollo sostenible de los países, dificultando el progreso económico, debilitando la democracia y poniendo en peligro la cohesión social (PNUD, 2017). Así, se ha llegado a postular que la desigualdad amenaza incluso la sobrevivencia de las sociedades como tales, debido a que la igualdad es un requisito necesario para que todos puedan reconocerse como parte de la misma sociedad (Garretón, 2015). 
 
 
-```{r echo=FALSE, fig.cap="Gráfico de ejemplo", fig.align = 'center', out.width = '50%'}
-boxplot(Sepal.Length~Species,data=iris,
-        xlab="Species", ylab="Sepal Length", main="Iris Boxplot")
-```
+La teoría propuesta por Axel Honneth acerca de la justicia social permite ilustrar de buen modo como se entremezclan estas problemáticas de desigualdad, discriminación (o, en sus palabras, menosprecio) y desarrollo de una democracia sostenible con la necesidad de promover la igualdad de derechos. El autor señala que “la concesión de derechos sociales y la redistribución que la acompaña cumplen la función normativa de conceder a cada uno de los ciudadanos la oportunidad real de participar en el proceso democrático de construcción pública de la comunidad de derecho.” (Honneth, 2010, p.41) y, en este sentido, plantea que
 
-- finalmente para las tablas producidas por R, es un poco más difícil si se quiere obtener el documento tanto en html como en pdf (que se genera vía Latex). En este caso, las tablas deben ser producidas en formato markdown, lo que no es muy común todavía en las distintas librerías de R que en genera privilegian o html o latex. La función para producir tablas markdown en R es principalmente `kable`, de la librería `knitr`, por ejemplo:
+>“la misma lucha por la redistribución (…) se halla anclada en una lucha por el reconocimiento: representa un conflicto alrededor de las jerarquías de valores socialmente institucionalizadas que regulan que grupo social tiene derecho a exigir legítimamente -es decir, en función de su estatus y la apreciación de que disfruta- un cierto grado de bienes materiales. En pocas palabras, se trata de una lucha alrededor de la definición cultural de aquello que hace que una actividad social sea socialmente necesaria y valiosa.” (Honneth, 2010, p.43).
 
-````
-```{r tabla, echo=FALSE, caption="tabla de ejemplo", align = 'center'}`r ''`
-knitr::kable(head(iris), caption = "An example table caption.")
-```
-````
+Así, el autor propone que redistribución y reconocimiento son demandas mutuamente incluyentes, las cuales tienen como horizonte problematizar que aquellos valores socialmente institucionalizados debiesen concederse transversalmente a toda la comunidad. En las sociedades actuales, parte importante de los valores socialmente institucionalizados refieren a los Derechos Humanos, pero en América Latina aún hay sectores de la población que no gozan efectivamente de estos derechos (Bárcena et al, 2016). 
 
 
-
-```{r}
-knitr::kable(head(iris), caption = "Un ejemplo de tabla")
-```
+Este panorama revela la urgencia de que se promuevan leyes y políticas públicas que garanticen la igualdad de derechos, un principio democrático que sienta las bases del respeto a los Derechos Humanos, para terminar con la discriminación y formar una sociedad donde todos se reconozcan mutuamente. En países democráticos como Chile la promoción de leyes que se orienten en este sentido dependerá, en buena medida, del apoyo de la ciudadanía hacia la igualdad de derechos.
 
 
-* nota sobre ubicación de imágenes y tablas en documento pdf (latex): en general se producen problemas en la ubicación, ya que automáticamente se ajustan al lugar disponible más cercano, sea atrás o delante. Si se quiere fijar la posición en el pdf, agregar antes y después del texto `\FloarBarrier`, que es un comando latex que no será visible ni en pdf ni en html.
+El fomento de políticas públicas que avancen a garantizar la igualdad y la promoción de actitudes positivas hacia la igualdad de derechos entre la ciudadanía son horizontes de organismos internacionales como la Organización de las Naciones Unidas (ONU), frente a los cuales la educación se sitúa como un espacio de socialización capaz de influir en los principios y valores de los estudiantes. La socialización escolar se constituye como un espacio estratégico en el cual el Estado puede intervenir para fomentar principios valóricos de la democracia, como la tolerancia, el respeto y la igualdad, debido a que la escuela es el principal espacio de socialización fuera de la familia. Así se propone en el programa Educación para la Ciudadanía Mundial en América Latina y el Caribe, donde se señala que “En un mundo con crecientes manifestaciones de intolerancia, es crítico que los sistemas educativos equipen a los estudiantes con valores, conocimientos y habilidades que inculquen respeto por los Derechos Humanos.” (UNESCO, s.f.). Siguiendo esta línea, en los últimos años el Estado chileno ha aumentado sus esfuerzos por incidir en el proceso de socialización política de los jóvenes, proponiendo la implementación de una política pública de Formación Ciudadana que tiene entre sus objetivos de aprendizaje transversal:
+
+> “Conocer, respetar y defender la igualdad de derechos esenciales de todas las personas, sin distinción de sexo, edad, condición física, etnia, religión o situación económica, y actuar en concordancia con el principio ético que reconoce que todos los seres humanos nacen libres e iguales en dignidad y derechos y, dotados de razón y conciencia, deben comportarse fraternalmente los unos con los otros” (Ministerio de Educación, 2016a, p.85).
+
+De este modo, teniendo en consideración que la promoción de políticas que garanticen la igualdad de derechos depende del apoyo que la ciudadanía dé a la misma y que la escuela es un espacio estratégico donde se puede intervenir para promover actitudes positivas hacia la igualdad de derechos, se vuelve relevante analizar los factores que inciden en el proceso de socialización política de dichas actitudes. Enfocar este análisis en jóvenes en edad escolar puede permitir comprender por qué se generan diferencias en las predisposiciones a la igualdad de derechos para grupos desfavorecidos e identificar las prácticas y/o condiciones de la escuela que favorecen una actitud positiva hacia la igualdad de derechos. 
 
 
-## Publicación web y versionamiento
+Desde los orígenes de la sociología los procesos de socialización han sido un tema de interés (ej. Durkheim, 1922), por lo que la pregunta sobre los factores que influyen en la socialización de las actitudes hacia la igualdad de derechos entre los jóvenes no es una novedad. La mayoría de los estudios al respecto se ha enfocado en dos tipos de características: las características individuales del estudiante, y las características de la escuela a la que asiste. Por un lado, se ha evidenciado que el nivel socioeconómico de la familia del estudiante (Miranda, Castillo & Cumsille, 2018), poseer antecedentes migratorios (Miranda et al, 2018), pertenecer al género femenino (Miranda et al, 2018; Schulz, Ainley, Cox & Friedman, 2018) y/o el nivel de conocimiento cívico del estudiante (Schulz, Ainley, Cox et al, 2016; Schulz et al, 2011; Schulz & Ainley, 2018) se asocian positivamente con las actitudes hacia la igualdad de derechos para grupos desfavorecidos. En otras palabras, se ha evidenciado que existen diferencias en las actitudes hacia la igualdad de derechos de los jóvenes que se asocian a características personales. Por otro lado, se ha constatado que la apertura a la discusión en el aula (Barber, Torney-Purta & Fennelly, 2010; Schulz & Ainley, 2018), el clima escolar (Caro & Schulz 2012; Schulz & Ainley, 2018) y la composición del aula (Isac, Maslowski, & Van der Werf, 2012; Caro & Schulz 2012) se asocian a actitudes positivas a la igualdad de derechos. 
 
-Una de las ventajas del formato html es poder publicarlo en línea para una fácil lectura y seguimiento. Esto puede ocurrir desde las fases iniciales o para el documento final, aumentando las posibilidades de difusión, colaboración y también de obtener revisiones y comentarios. De todas maneras, requiere algunos conocimientos más específicos que se introducen aquí.
 
-Existen diferentes maneras de generar un sitio web con el documento, pero el más directo es a través de **Github** y de su opción _githubpages_. Git/Github es una plataforma de versionamiento y colaboración cuyos detalles y posibilidades claramente no alcanzan a ser cubiertos en este espacio, pero si se desea mayor información se puede revisar [aquí](https://cienciasocialabierta.netlify.app/class/08-class/).
+La presente propuesta de investigación busca ser un aporte a estas líneas de estudio, incorporando los dos tipos de características en un modelo que permita evaluar si la relación entre las actitudes hacia la igualdad de derechos y las características de cada estudiante puede ser moderada por alguno de los factores del proceso de socialización en la escuela que han sido analizados anteriormente en otras investigaciones. La motivación principal de este estudio surge de la siguiente reflexión: si tenemos en consideración que existen diferencias individuales en las actitudes hacia la igualdad de derechos, es necesario indagar en cómo podemos terminar con estas diferencias. Como se ha argumentado anteriormente, la escuela es un ambiente especialmente idóneo para la socialización de principios democráticos como la igualdad de derechos. Pero, si bien distintas investigaciones evidencian que existe una asociación entre ciertas características de la escuela y las actitudes hacia la igualdad de derechos de sus estudiantes, casi no existe evidencia que permita discernir si esas características permiten mitigar, potenciar o reproducir las diferencias provocadas por las características individuales. Por lo tanto, este estudio pretende aportar a la comprensión de qué prácticas y/o características de la escuela permiten disminuir o eliminar las diferencias en las actitudes hacia la igualdad de derechos. En esta línea, se ha formulado los siguientes objetivos de investigación:
 
-1. Generación de repositorio: para quienes obtuvieron la carpeta partiendo desde Github con un _fork / clone_ de tesisfacsodown el repositorio se encuentra listo. En caso de haber bajado/copiado la carpeta manera simple, entonces a) crear un repositorio en Github, b) clonarlo localmente, c) copiar/mover los archivos de la carpeta tesisfacsodown a la carpeta clonada
 
-2. Subir los cambios al repositorio (push)
+**Objetivo general** 
 
-3. Una vez que los archivos ya están en el repositorio Github ir a Settings > Github Pages y dejar de la siguiente manera:
+* Evaluar si alguna/s de las características y prácticas de la escuela posee/n la capacidad de disminuir las diferencias en las actitudes hacia la igualdad de derechos de los jóvenes chilenos, producidas por características individuales de los estudiantes.
 
-```{r githubpages, echo=FALSE, fig.cap="Bookdown en Github Pages", fig.align = 'center', out.width = '60%'}
-knitr::include_graphics(path = "images/githubpages.png")
-```
+**Objetivos específicos**
 
-Luego "Save" y se actualiza la página. Al bajar nuevamente a la sección de Github Pages debería aparecer "Your site is ready to be published at [dirección web]". Esa dirección es donde se puede acceder al sitio una vez que pasen algunos minutos.
+* Establecer en qué medida las actitudes de los jóvenes chilenos hacia la igualdad de derechos se relacionan con características individuales del estudiante (más específicamente, su género, sus antecedentes migratorios, su identificación con un grupo étnico, su nivel de conocimiento cívico y su nivel socioeconómico).
+* Establecer en qué medida las actitudes de los jóvenes chilenos hacia la igualdad de derechos se relacionan con características y prácticas de la escuela a la que asisten (más específicamente, con la apertura a la discusión en el aula, el clima escolar y las características de sus compañeros de curso).
+* Identificar cuáles características y prácticas del contexto escolar poseen la capacidad de disminuir el efecto de las características del estudiante sobre sus actitudes hacia la igualdad de derechos.
+
+
+Se espera que realizar una investigación con estas cualidades constituya un aporte a la comprensión de la capacidad que tienen las escuelas para promover actitudes positivas hacia la igualdad de derechos, dando luces sobre qué prácticas se podrían potenciar en los colegios para prevenir las actitudes discriminadoras.

@@ -1,29 +1,26 @@
 ---
-title: 'Título completo de la tesis o seminario de grado'
-subtitle: "Tesis para optar al grado de ...."
-author: "Mi nombre"
-date: "Fecha" # o para fecha actual: "`r Sys.Date()`"
+title: '¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?'
+subtitle: "Proyecto de Tesis - Magíster en Ciencias Sociales"
+author: "Anais Herrera Leighton"
+date: "15 de enero, 2020" # o para fecha actual: "`r Sys.Date()`"
 institution: "Universidad de Chile"
-degree: "Seminario / Memoria / Tesis de Grado - Carrera de Sociología"
-advisor: "Profesor/a guía: mi supervisor/a"
+degree: "Proyecto de Tesis - Magíster en Ciencias Sociales"
+advisor: "Profesor guía: Juan Carlos Castillo"
 bibliography: [tesis.bib]
 biblio-style: apalike
 link-citations: yes
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-fontsize: 14pt
+fontsize: 12pt
+font-family: Times New Roman
+linestretch: '1.5'
 lof: True
 lot: True
 
 ---
 
-
 # Resumen {-}
+En un mundo con altos niveles de desigualdad y crecientes expresiones de intolerancia, se hace fundamental la aprobación de políticas públicas que avancen a garantizar la igualdad. Sin embargo, en sociedades democráticas, la promoción de estas políticas depende en parte importante de la opinión de la ciudadanía sobre las mismas. Uno de los principales espacios en los que el Estado puede intervenir para promover actitudes positivas hacia la igualdad de derechos es la escuela, ya que esta juega un rol fundamental en la socialización de los principios y valores de los estudiantes. Diversas investigaciones han indagado en los factores asociados a las actitudes hacia la igualdad de derechos de los jóvenes en edad escolar, enfocándose en dos tipos de características: las características individuales de los estudiantes, y las características y prácticas de la escuela a la que asisten. La presente propuesta de investigación pretende aportar a estas líneas de estudio incorporando los dos tipos de características en un modelo estadístico que permita evaluar si alguna de las características de la escuela (señaladas frecuentemente en investigaciones anteriores) posee la capacidad de disminuir las diferencias en las actitudes hacia la igualdad de derechos. En otras palabras, el objetivo de este proyecto de tesis es evaluar si alguna de las características y prácticas de la escuela posee la capacidad de disminuir las diferencias en las actitudes hacia la igualdad de derechos de los jóvenes chilenos, producidas por características individuales de los estudiantes. Para abordar empíricamente este objetivo se ha decidido analizar los datos correspondientes a Chile del Estudio Internacional sobre Educación Cívica y Ciudadana (ICCS) del año 2016. La muestra chilena de este estudio incorporó a 5.081 estudiantes de 8°básico de 178 escuelas. 
 
-Resumen  aquí
-
-
-# Agradecimientos {-}
-
-Agradecimientos aquí.
+**Palabras clave:** *“formación ciudadana”*, *“educación cívica”*, *“actitudes”*, *“igualdad de derechos”*, *“jóvenes”*.

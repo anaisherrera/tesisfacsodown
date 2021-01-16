@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</title>
-  <meta name="description" content="¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <title>4.1 AFC variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</title>
+  <meta name="description" content="4.1 AFC variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <meta property="og:title" content="4.1 AFC variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
+  <meta name="twitter:title" content="4.1 AFC variables dependientes | ¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introducción.html"/>
+<link rel="prev" href="análisis.html"/>
+<link rel="next" href="conclusiones.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -85,7 +85,10 @@
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="métodos.html"><a href="métodos.html"><i class="fa fa-check"></i><b>3.3</b> Métodos</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="análisis-factorial-confirmatorio-variables-dependientes.html"><a href="análisis-factorial-confirmatorio-variables-dependientes.html"><i class="fa fa-check"></i><b>4</b> Análisis factorial confirmatorio: Variables dependientes</a></li>
+<li class="chapter" data-level="4" data-path="análisis.html"><a href="análisis.html"><i class="fa fa-check"></i><b>4</b> Análisis</a><ul>
+<li class="chapter" data-level="4.1" data-path="afc-variables-dependientes.html"><a href="afc-variables-dependientes.html"><i class="fa fa-check"></i><b>4.1</b> AFC variables dependientes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>5</b> Conclusiones</a></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -107,25 +110,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">¿Qué pueden hacer las escuelas para promover actitudes positivas hacia la igualdad de derechos?</h1>
-<h2 class="subtitle"><em>Proyecto de Tesis - Magíster en Ciencias Sociales</em></h2>
-<p class="author"><em>Anais Herrera Leighton</em></p>
-<p class="date"><em>15 de enero, 2020</em></p>
-</div>
-<div id="resumen" class="section level1 unnumbered">
-<h1>Resumen</h1>
-<p>En un mundo con altos niveles de desigualdad y crecientes expresiones de intolerancia, se hace fundamental la aprobación de políticas públicas que avancen a garantizar la igualdad. Sin embargo, en sociedades democráticas, la promoción de estas políticas depende en parte importante de la opinión de la ciudadanía sobre las mismas. Uno de los principales espacios en los que el Estado puede intervenir para promover actitudes positivas hacia la igualdad de derechos es la escuela, ya que esta juega un rol fundamental en la socialización de los principios y valores de los estudiantes. Diversas investigaciones han indagado en los factores asociados a las actitudes hacia la igualdad de derechos de los jóvenes en edad escolar, enfocándose en dos tipos de características: las características individuales de los estudiantes, y las características y prácticas de la escuela a la que asisten. La presente propuesta de investigación pretende aportar a estas líneas de estudio incorporando los dos tipos de características en un modelo estadístico que permita evaluar si alguna de las características de la escuela (señaladas frecuentemente en investigaciones anteriores) posee la capacidad de disminuir las diferencias en las actitudes hacia la igualdad de derechos. En otras palabras, el objetivo de este proyecto de tesis es evaluar si alguna de las características y prácticas de la escuela posee la capacidad de disminuir las diferencias en las actitudes hacia la igualdad de derechos de los jóvenes chilenos, producidas por características individuales de los estudiantes. Para abordar empíricamente este objetivo se ha decidido analizar los datos correspondientes a Chile del Estudio Internacional sobre Educación Cívica y Ciudadana (ICCS) del año 2016. La muestra chilena de este estudio incorporó a 5.081 estudiantes de 8°básico de 178 escuelas.</p>
-<p><strong>Palabras clave:</strong> <em>“formación ciudadana”</em>, <em>“educación cívica”</em>, <em>“actitudes”</em>, <em>“igualdad de derechos”</em>, <em>“jóvenes”</em>.</p>
+<div id="afc-variables-dependientes" class="section level2">
+<h2><span class="header-section-number">4.1</span> AFC variables dependientes</h2>
+<pre><code>
+```r
+data_tt = data1 %&gt;% select(i_gen1,i_gen2,i_gen5,i_etn1,i_etn2,i_etn3,i_etn5,i_hom1,i_hom2,i_hom3,i_hom4,i_hom5,idschool) %&gt;% as.data.frame()
+model_tt &lt;- &#39;
+f.genero =~ i_gen1 + i_gen2 + i_gen5 
+
+f.etnico =~ i_etn1 + i_etn2 + i_etn3 + i_etn5
+
+f.homosexual =~ i_hom1 + i_hom2 + i_hom3 + i_hom4 + i_hom5
+
+f.genero ~~ f.etnico 
+   f.genero ~~ f.homosexual
+   f.etnico ~~ f.homosexual&#39;
+
+fit_tt&lt;- cfa(model_tt, data=data_tt, ordered=c(&quot;i_gen1&quot;,&quot;i_gen2&quot;,&quot;i_gen5&quot;,&quot;i_etn1&quot;,&quot;i_etn2&quot;,&quot;i_etn3&quot;,&quot;i_etn5&quot;,&quot;i_hom1&quot;,&quot;i_hom2&quot;,&quot;i_hom3&quot;,&quot;i_hom4&quot;,&quot;i_hom5&quot;), cluster = &#39;idschool&#39;)
+summary(fit_tt, fit.measures=T, standardized=T)
+```</code></pre>
 
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introducción.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="análisis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusiones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -156,7 +169,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-analisis.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -1,6 +1,31 @@
-# Análisis
+# Análisis factorial confirmatorio: Variables dependientes
 
-## Análisis descriptivo
+```{r eval=FALSE}
+data_tt = data1 %>% select(IS3G24A,IS3G24B,IS3G24E,IS3G25A,IS3G25B,IS3G25C,IS3G25E,LS3G08A,LS3G08B,LS3G08C,LS3G08D,LS3G08E,idschool) %>% as.data.frame()
+model_tt <- '
+f.genero =~ IS3G24A + IS3G24B + IS3G24E 
+
+f.etnico =~ IS3G25A + IS3G25B + IS3G25C + IS3G25E
+
+f.homosexual =~ LS3G08A + LS3G08B + LS3G08C + LS3G08D + LS3G08E
+
+f.genero ~~ f.etnico 
+f.genero ~~ f.homosexual
+f.etnico ~~ f.homosexual'
+
+fit_tt<- cfa(model_tt, data=data_tt, ordered=c("IS3G24A","IS3G24B","IS3G24E","IS3G25A","IS3G25B","IS3G25C","IS3G25E","LS3G08A","LS3G08B","LS3G08C","LS3G08D","LS3G08E"), cluster = 'idschool')
+summary(fit_tt, fit.measures=T, standardized=T)
+```
+
+**Indicadores de ajuste del modelo**
+
+|                       	| Standard        	| Robust           	|
+|-----------------------	|-----------------	|------------------	|
+| Chi-square (P-value)  	| 878,808 (0,000) 	| 1659,773 (0,000) 	|
+| Chi-square Ratio (df) 	| 17,231 (51)     	| 32,544 (51)      	|
+| CFI                   	| 0,998           	| 0,991            	|
+| TLI                   	| 0,998           	| 0,988            	|
+| RMSEA (P-value)       	| 0,057 (0,000)   	| 0,079 (0,000)    	|
 
 
-## Modelos
+Siguiendo los criterios de bondad de ajuste propuestos por Brown (2008), es posible afirmar que según los indicadores relativos al Chi-square el modelo de medida no presentaría un ajuste adecuado. Sin embargo, esta prueba suele verse afectada cuando se trabaja con tamaños muestrales grandes, por lo que se deben analizar también los otros tres indicadores de ajuste del modo. Los otros tres indicadores se encuentran dentro de los criterios establecidos por Brown, generando evidencias de un nivel de ajuste adecuado. Por consiguiente, se ha decidido utilizar este modelo de medida para las variables dependientes debido a que presenta un ajuste parcialmente adecuado.
